@@ -1,0 +1,98 @@
+<% layout("layouts/boilerplate") %>
+<body>
+     <div id="filters">
+        <a href="/listings" class="listing-link sliderr">
+            <div class="filter nav-item">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+        </a>
+        <a href="/listings/top/Travel" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Travel</p>
+            </div>
+        </a>
+
+        <a href="/listings/top/Programming" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-city"></i></div>
+                <p>Programming</p>
+            </div>
+        </a>
+
+        <a href="/listings/top/Design" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-sun"></i></i></div>
+                <p>Design</p>
+            </div>
+        </a>
+    
+        <a href="/listings/top/Social-Media" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Social Media</p>
+            </div>
+        </a>
+
+        <a href="/listings/top/Technology" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Technology</p>
+            </div>
+        </a>
+
+        <a href="/listings/top/Lifestyle" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Lifestyle</p>
+            </div>
+        </a>
+
+        <a href="/listings/top/Writing" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>Writing</p>
+            </div>
+        </a>
+
+        <a href="/listings/top/Cooking" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-snowflake"></i></div>
+                <p>Cooking</p>
+            </div>
+        </a>
+        <a href="/listings/top/Animation" class=" listing-link sliderr">
+            <div class="filter">
+                <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                <p>Animation</p>
+            </div>
+        </a>
+     </div>
+
+    <div >
+        <!-- <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1"> -->
+            <% for (let list of allData){ %>
+                <a href="/listings/<%=list._id%>" class=" listing-link "style="max-width: 100%;">
+                    <div class="card mb-3 " style="max-width: 100%; max-height: 200px; padding: 10px; border-radius: 25px; border: 2px solid pink;">
+                        <div class="" style="height: 150px; width: 100%;     display: flex;">
+                          <div class="col-md-4 pic-media" style="height: 150px; width: 185px;">
+                            <img src="<%=list.image.url %>" style="height: 150px;" class="img-fluid rounded-start" alt="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" style="height : 20rem;">
+                          </div>
+                          <div class="col-md-8 text-media" style="overflow: hidden;">
+                            <div class="card-body">
+                              <h5 class="card-title"><%=list.owner.username%></h5>
+                              <p class="card-text"><%=list.description%></p>
+                              <p class="card-text"><small class="text-body-secondary"><%=list.description%></small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </a>
+            <% }; %>
+    </div>  
+</body>
+
+
+
+    

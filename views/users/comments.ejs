@@ -1,0 +1,34 @@
+<% layout("layouts/boilerplate") %>
+<body>
+<div id="filters">
+    <a href="/users/profile/posts" class="listing-link sliderr">
+        <div class="filter nav-item">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Posts</p>
+        </div>
+    </a>
+    <a href="/users/profile/comments" class=" listing-link sliderr">
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Comments</p>
+        </div>
+    </a>
+</div>
+<div class="card">
+    <div class="card-body">
+      <p class="card-title"> <h2>Username : <%=username%> </h2> </p>
+      <p class="card-text"><h2>Password : xxxxx</h2></p>
+    </div>
+  </div>
+<div class="profile">
+        <!-- <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1"> -->
+            <% for (let list of allData){ %>
+                <div class="card col-4 ms-3 mb-3" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">@<%= list.author.username %></h5>
+                        <p class="card-text"> <%=list.comment%></p>
+                    </div>
+                </div>
+            <% }; %>
+</div>  
+</body> 

@@ -1,0 +1,46 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h2>listing your listing</h2>
+    <form  method="POST" action="/listings/<%=listing._id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" value="<%=listing.title%>" type="text" class="form-control" required>
+            <div class="invalid-feedback">Please enter valid Data!!</div>   
+            <div class="valid-feedback">Looks good &#128077; </div>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required><%=listing.description%></textarea>
+            <div class="invalid-feedback">Please enter valid Data!!</div>   
+        </div>
+        <div class="mb-3">
+            <p>Original Listing Image</p>
+            <img src="<%=originalImageUrl%>" class="urlsize" >
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Upload new Image</label>
+            <input name="listing[image]"  type="file" class="form-control">  
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Gerne</label>
+            <select name="listing[category]" id="inputState" class="form-select">
+              <option>Programming</option>
+              <option>Travel</option>
+              <option>Design</option>
+              <option>Social-Media</option>
+              <option>Technology</option>
+              <option>Lifestyle</option>
+              <option>Writing</option>
+              <option>Cooking</option>
+              <option>Animation </option> 
+            </select>
+        </div>
+        <br>
+        <button class="btn btn-dark add-btn mt-3">listing</button>
+    </form>
+        </div>
+    </div>
+    
+</body>

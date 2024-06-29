@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md border-bottom sticky-top" style="background-color: cadetblue;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-infinity info-subtle"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse user-btw" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+        <div class="navbar-nav">
+          <form class="d-flex" role="search" method="GET" action="/listings/search" >
+            <input name="gerne" style="border-radius: 25px" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button style="border-radius: 25px" class="btn bg-info-subtle btn-searchh" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
+        </div>
+        <div class="rightnav">
+          <a class="nav-link user-logo" href="/listings/new">Heaven is here</a>
+          <div class="nav-item dropstart btn bg-info-subtle user-logo" style="border-radius: 50%;">
+            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-user "></i>
+            </a>
+            <ul class="dropdown-menu">
+              <% if(!userLog){ %>
+                <li><a class="dropdown-item" href="/users/signup">Signup</a></li>
+                <li><a class="dropdown-item" href="/users/login">Login</a></li>
+              <% } %>
+              <% if(userLog){ %>
+                <li><a class="dropdown-item" href="/users/logout">LogOut</a></li>
+                <li><a class="dropdown-item" href="/users/profile/posts">Profile</a></li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

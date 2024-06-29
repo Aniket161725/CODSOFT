@@ -1,0 +1,40 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="row">
+    <div class="col-8 offset-2">
+    <h2>Create new Listing</h2>
+    <form method="POST" class="needs-validation" action="/listings"  enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label" >Title</label>
+            <input name="listing[title]" placeholder="Enter Title" type="text" class="form-control" required>
+            <div class="valid-feedback">Title looks good</div>
+            <div class="invalid-feedback">Please enter valid Title!!</div>   
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" >Write description</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload image</label>
+            <input name="listing[image]" placeholder="Enter image URL" type="file" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Gerne</label>
+            <select name="listing[category]" id="inputState" class="form-select">
+              <option>Programming</option>
+              <option>Travel</option>
+              <option>Design</option>
+              <option>Social-Media</option>
+              <option>Technology</option>
+              <option>Lifestyle</option>
+              <option>Writing</option>
+              <option>Cooking</option>
+              <option>Animation </option> 
+            </select>
+        </div>
+        <br>
+        <button class="btn btn-dark add-btn">ADD</button>
+    </form>
+    </div>
+    </div>
+</body>
